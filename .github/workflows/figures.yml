@@ -17,7 +17,8 @@ jobs:
           snakemake -s snakemake/Snakefile --cores 2
       - name: Build the paper
         run: |
-          curl -sL https://github.com/quarto-dev/quarto-cli/releases/latest/download/quarto-linux-amd64.deb -o q.deb && apt-get install -y -q ./q.deb
+          V=$(curl -s https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest | grep -o '"tag_name": *"v[0-9.]*"' | grep -o '[0-9][0-9.]*')
+          curl -sL "https://github.com/quarto-dev/quarto-cli/releases/download/v$V/quarto-$V-linux-amd64.deb" -o q.deb && apt-get install -y -q ./q.deb >/dev/null
           quarto render quarto/
       - uses: actions/upload-artifact@v4
         with:
