@@ -13,7 +13,7 @@ jobs:
       - name: Regenerate + verify (the Snakemake DAG)
         run: |
           apt-get update -q && apt-get install -y -q python3-pip >/dev/null   # the cxplot image ships python3 but not pip
-          pip install -q snakemake
+          pip install -q "snakemake<8" "pulp<2.8"   # python 3.10 in the image; snakemake 7 needs pulp<2.8
           snakemake -s snakemake/Snakefile --cores 2
       - name: Build the paper
         run: |
