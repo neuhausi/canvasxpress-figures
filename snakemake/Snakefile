@@ -1,0 +1,30 @@
+# Figures as build artifacts (Snakemake).
+#   snakemake -s snakemake/Snakefile --cores 2                # cxplot on PATH
+#   CXPLOT="node ~/cxplot/bin/cxplot.js" snakemake ...        # any local install
+#   snakemake ... --software-deployment-method apptainer      # pinned image (see container:)
+import glob, os
+workdir: os.path.join(workflow.basedir, "..")
+CXPLOT = os.environ.get("CXPLOT", "cxplot")
+FIGS = [os.path.basename(f)[:-5] for f in sorted(glob.glob("figures/*.json"))]
+ENGINE = "68.8"
+
+rule all:
+    input: "out/VERIFIED", expand("out/{f}.png", f=FIGS)
+
+rule validate:
+    input: "figures/{f}.json"
+    output: temp("out/{f}.valid")
+    container: f"docker://ghcr.io/neuhausi/cxplot:{ENGINE}"
+    shell: "{CXPLOT} validate {input} && touch {output}"
+
+rule render:
+    input: spec="figures/{f}.json", ok="out/{f}.valid"
+    output: "out/{f}.png"
+    container: f"docker://ghcr.io/neuhausi/cxplot:{ENGINE}"
+    shell: "{CXPLOT} render {input.spec} -o {output}"
+
+rule verify:
+    input: expand("out/{f}.png", f=FIGS), manifest="figures.manifest.json"
+    output: "out/VERIFIED"
+    container: f"docker://ghcr.io/neuhausi/cxplot:{ENGINE}"
+    shell: "{CXPLOT} hash figures/*.json --compare {input.manifest} && touch {output}"

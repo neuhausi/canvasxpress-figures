@@ -1,0 +1,24 @@
+# Regenerate every figure from its spec on a clean checkout, verify the bytes against the
+# committed manifest, and build the paper. Uses the pinned cxplot image.
+name: figures
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/neuhausi/cxplot:68.8
+      options: --entrypoint ""
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate + verify (the Snakemake DAG)
+        run: |
+          pip install -q snakemake
+          snakemake -s snakemake/Snakefile --cores 2
+      - name: Build the paper
+        run: |
+          curl -sL https://github.com/quarto-dev/quarto-cli/releases/latest/download/quarto-linux-amd64.deb -o q.deb && apt-get install -y -q ./q.deb
+          quarto render quarto/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: figures-and-paper
+          path: out/
