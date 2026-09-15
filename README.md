@@ -37,10 +37,13 @@ Reproducibility is engine + renderer + fonts. The Docker image
 `ghcr.io/neuhausi/cxplot:<engine>` pins all three (Playwright's Chromium image + the
 engine release). `-profile local` / plain `snakemake` use whatever `cxplot` is on `PATH`
 (`npm i -g cxplot`); the manifest records the engine version so a mismatch is
-reported, not silent. Regenerate the manifest deliberately when you upgrade the engine:
+reported, not silent. Regenerate the manifest deliberately when you upgrade the engine — **inside the pinned image**,
+because the manifest is a statement about that image, not about your laptop's browser and fonts
+(the same image gives identical bytes on arm64 and amd64; a host-installed `cxplot` does not):
 
 ```
-cxplot hash figures/*.json --manifest figures.manifest.json
+docker run --rm -v "$PWD:/work" ghcr.io/neuhausi/cxplot:68.9 \
+  hash /work/figures/*.json --manifest /work/figures.manifest.json
 ```
 
 ## Add a figure

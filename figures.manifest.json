@@ -1,51 +1,51 @@
 {
   "tool": "cxplot hash",
-  "createdAt": "2026-09-15T19:25:44.764Z",
+  "createdAt": "2026-09-15T19:37:41.263Z",
   "engineVersion": "68.9",
   "engineSource": "npm canvasxpress 68.9.0",
   "node": "v24.14.1",
-  "platform": "darwin/arm64",
+  "platform": "linux/x64",
   "playwright": "1.59.1",
   "settle": "full",
   "figures": {
     "boxplot-1.json": {
-      "sha256": "9c3d988b04bb8cb0e066de243912198975b14961a5abf026725b45220b844046",
+      "sha256": "54b91be6d5ead335bf2997560ac73f57477b7aa18158765c9674f743fb1a38a8",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 204,
+      "waitedMs": 223,
       "errors": []
     },
     "heatmap-1.json": {
-      "sha256": "c82d3eef050c7f62554fb458f8531aac12d90615b1e8e5aff3d81d4069c40a3f",
+      "sha256": "28b4b1478f6c1138a0304aa49e94c274b3c6f5015820898414803aa11711e38c",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 204,
+      "waitedMs": 218,
       "errors": []
     },
     "kaplan-meier-1.json": {
-      "sha256": "36a01d8da2298c1a3496fd1e48423a6b003eec77179b8f01cd604635ebf69c38",
+      "sha256": "864d488fe0ddce521e4d07ff4edd5694c89c0ecd854690280fae3936153cbd36",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 204,
+      "waitedMs": 221,
       "errors": []
     },
     "network-1.json": {
-      "sha256": "2836cbc7cb421dca8757e72eb79c715cbb22605eae9d8b9af3b10a6eafeed2b0",
+      "sha256": "273ec24b230230991c1e1ad1864beb823a1936914cb13def3d87c84c45ec4c50",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 3469,
+      "waitedMs": 3620,
       "errors": []
     },
     "volcano-1.json": {
-      "sha256": "0611570abd800549439574831c6cd3d68e3a395ae8392fc24e0a47b456934acd",
+      "sha256": "6fdef5de83974148f0463f931c95ac5cf39c1b9efac62862d04c385bba0f0443",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 202,
+      "waitedMs": 222,
       "errors": []
     }
   },

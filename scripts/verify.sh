@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Regenerate every figure and compare the bytes to the committed manifest.
-# CXPLOT overrides the command (e.g. "docker run --rm -v $PWD:/work ghcr.io/neuhausi/cxplot:68.8" or
+# CXPLOT overrides the command (e.g. "docker run --rm -v $PWD:/work ghcr.io/neuhausi/cxplot:68.9" or
 # "node /path/to/tools/cxplot/bin/cxplot.js"). Exit 1 on any mismatch.
 set -euo pipefail
 cd "$(dirname "$0")/.."
