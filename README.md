@@ -4,7 +4,7 @@ Every figure in this repository is **regenerated from its spec** by the pipeline
 pasted in as a screenshot. Each `figures/*.json` is a self-describing CanvasXpress figure
 (`{data, config}` — the format every CanvasXpress chart exports and the
 [published schema](https://www.canvasxpress.org/spec.html) describes). The pipeline runs
-[`cxplot`](https://www.npmjs.com/package/canvasxpress-cli) — the same engine the browser
+[`cxplot`](https://www.npmjs.com/package/cxplot (npm)) — the same engine the browser
 runs, headless — and verifies the bytes against `figures.manifest.json`.
 
 Three equivalent pipelines, pick yours:
@@ -36,7 +36,7 @@ scripts/verify.sh         regenerate + compare to the manifest (what CI runs)
 Reproducibility is engine + renderer + fonts. The Docker image
 `ghcr.io/neuhausi/cxplot:<engine>` pins all three (Playwright's Chromium image + the
 engine release). `-profile local` / plain `snakemake` use whatever `cxplot` is on `PATH`
-(`npm i -g canvasxpress-cli`); the manifest records the engine version so a mismatch is
+(`npm i -g cxplot`); the manifest records the engine version so a mismatch is
 reported, not silent. Regenerate the manifest deliberately when you upgrade the engine:
 
 ```
