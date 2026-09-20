@@ -1,6 +1,6 @@
 {
   "tool": "cxplot hash",
-  "createdAt": "2026-09-20T02:23:46.640Z",
+  "createdAt": "2026-09-20T02:25:52.349Z",
   "engineVersion": "69.6",
   "engineSource": "npm canvasxpress 69.6.1",
   "node": "v24.14.1",
@@ -13,7 +13,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 205,
+      "waitedMs": 208,
       "errors": []
     },
     "heatmap-1.json": {
@@ -37,7 +37,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 3517,
+      "waitedMs": 3520,
       "errors": []
     },
     "volcano-1.json": {
@@ -45,7 +45,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 206,
+      "waitedMs": 203,
       "errors": []
     }
   },
