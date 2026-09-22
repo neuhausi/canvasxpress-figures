@@ -42,7 +42,7 @@ because the manifest is a statement about that image, not about your laptop's br
 (the same image gives identical bytes on arm64 and amd64; a host-installed `cxplot` does not):
 
 ```
-docker run --rm -v "$PWD:/work" ghcr.io/neuhausi/cxplot:69.6 \
+docker run --rm -v "$PWD:/work" ghcr.io/neuhausi/cxplot:69.7 \
   hash /work/figures/*.json --manifest /work/figures.manifest.json
 ```
 
