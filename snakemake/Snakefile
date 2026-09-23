@@ -6,7 +6,7 @@ import glob, os
 workdir: os.path.join(workflow.basedir, "..")
 CXPLOT = os.environ.get("CXPLOT", "cxplot")
 FIGS = [os.path.basename(f)[:-5] for f in sorted(glob.glob("figures/*.json"))]
-ENGINE = "69.7"
+ENGINE = "69.8"
 
 rule all:
     input: "out/VERIFIED", expand("out/{f}.png", f=FIGS)
