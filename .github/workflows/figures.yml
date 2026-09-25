@@ -16,8 +16,13 @@ jobs:
           pip install -q "snakemake<8" "pulp<2.8"   # python 3.10 in the image; snakemake 7 needs pulp<2.8
           snakemake -s snakemake/Snakefile --cores 2
       - name: Build the paper
+        env:
+          # Authenticated API calls: the anonymous limit (60/h, shared by the
+          # runner's IP) made the latest-Quarto lookup fail at random.
+          GH_TOKEN: ${{ github.token }}
         run: |
-          V=$(curl -s https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest | grep -o '"tag_name": *"v[0-9.]*"' | grep -o '[0-9][0-9.]*')
+          V=$(curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest | grep -o '"tag_name": *"v[0-9.]*"' | grep -o '[0-9][0-9.]*' || true)
+          [ -n "$V" ] || { echo "Could not resolve the latest Quarto release from the GitHub API"; exit 1; }
           curl -sL "https://github.com/quarto-dev/quarto-cli/releases/download/v$V/quarto-$V-linux-amd64.deb" -o q.deb && apt-get install -y -q ./q.deb >/dev/null
           quarto render quarto/
       - uses: actions/upload-artifact@v4
