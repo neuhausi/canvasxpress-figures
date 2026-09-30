@@ -6,7 +6,7 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/neuhausi/cxplot:70.6
+      image: ghcr.io/neuhausi/cxplot:70.7
       options: --entrypoint ""
     steps:
       - uses: actions/checkout@v4
