@@ -1,8 +1,8 @@
 {
   "tool": "cxplot hash",
-  "createdAt": "2026-11-05T01:18:31.532Z",
-  "engineVersion": "73.8",
-  "engineSource": "npm canvasxpress 73.8.0",
+  "createdAt": "2026-11-05T05:00:44.091Z",
+  "engineVersion": "73.9",
+  "engineSource": "npm canvasxpress 73.9.0",
   "node": "v24.14.1",
   "platform": "linux/arm64",
   "playwright": "1.59.1",
@@ -13,7 +13,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 204,
+      "waitedMs": 207,
       "errors": []
     },
     "heatmap-1.json": {
@@ -21,7 +21,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 205,
+      "waitedMs": 208,
       "errors": []
     },
     "kaplan-meier-1.json": {
@@ -29,7 +29,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 207,
+      "waitedMs": 202,
       "errors": []
     },
     "network-1.json": {
@@ -37,7 +37,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 3480,
+      "waitedMs": 3501,
       "errors": []
     },
     "volcano-1.json": {
@@ -45,7 +45,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 209,
+      "waitedMs": 205,
       "errors": []
     }
   },
