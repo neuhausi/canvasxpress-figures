@@ -1,8 +1,8 @@
 {
   "tool": "cxplot hash",
-  "createdAt": "2026-11-08T22:14:24.705Z",
+  "createdAt": "2026-11-13T03:50:13.017Z",
   "engineVersion": "74.1",
-  "engineSource": "npm canvasxpress 74.1.0",
+  "engineSource": "npm canvasxpress 74.1.2",
   "node": "v24.14.1",
   "platform": "linux/arm64",
   "playwright": "1.59.1",
@@ -13,15 +13,15 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 206,
+      "waitedMs": 203,
       "errors": []
     },
     "heatmap-1.json": {
-      "sha256": "28b4b1478f6c1138a0304aa49e94c274b3c6f5015820898414803aa11711e38c",
+      "sha256": "3a1fc37d0a7fe14fa126f729f6ec1b797d605efa7b87cd4002daa42e2290f619",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 207,
+      "waitedMs": 208,
       "errors": []
     },
     "kaplan-meier-1.json": {
@@ -33,11 +33,11 @@
       "errors": []
     },
     "network-1.json": {
-      "sha256": "273ec24b230230991c1e1ad1864beb823a1936914cb13def3d87c84c45ec4c50",
+      "sha256": "bd61851d13ab9816ee4ff7ac4904ffedb71078632c498d87357ea330abcb2109",
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 3502,
+      "waitedMs": 3500,
       "errors": []
     },
     "volcano-1.json": {
@@ -45,7 +45,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 207,
+      "waitedMs": 204,
       "errors": []
     }
   },
