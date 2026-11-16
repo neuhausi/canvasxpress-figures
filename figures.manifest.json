@@ -1,6 +1,6 @@
 {
   "tool": "cxplot hash",
-  "createdAt": "2026-11-13T19:22:31.808Z",
+  "createdAt": "2026-11-16T16:26:17.962Z",
   "engineVersion": "74.3",
   "engineSource": "npm canvasxpress 74.3.0",
   "node": "v24.14.1",
@@ -21,7 +21,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 207,
+      "waitedMs": 204,
       "errors": []
     },
     "kaplan-meier-1.json": {
@@ -29,7 +29,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 205,
+      "waitedMs": 203,
       "errors": []
     },
     "network-1.json": {
@@ -37,7 +37,7 @@
       "width": 680,
       "height": 440,
       "settled": true,
-      "waitedMs": 3551,
+      "waitedMs": 3489,
       "errors": []
     },
     "volcano-1.json": {
